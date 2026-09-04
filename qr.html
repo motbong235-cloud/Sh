@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>✅ QR បង្កើតរួចរាល់</h1>
+<p class="sub">ឲ្យភាគីម្ខាងទៀត scan QR នេះ ដើម្បី download ឯកសារ</p>
+
+<div class="qr-box">
+  <img src="{{ url_for('qr_image', batch_id=batch_id) }}" alt="QR Code" width="220" height="220">
+</div>
+
+<div class="link-box">{{ download_url }}</div>
+
+<ul class="files">
+  {% for f in files %}
+  <li>📄 {{ f }}</li>
+  {% endfor %}
+</ul>
+
+<a class="btn" href="{{ url_for('download_page', batch_id=batch_id) }}">មើលទំព័រ Download</a>
+<p class="muted">
+  {% if expire_hours and expire_hours > 0 %}
+    Link នេះផុតកំណត់ក្នុងរយៈពេល {{ expire_hours }} ម៉ោង
+  {% else %}
+    Link នេះមិនផុតកំណត់ទេ
+  {% endif %}
+  &middot; <a href="{{ url_for('index') }}" style="color:#60a5fa;">ផ្ទុកឯកសារផ្សេងទៀត</a>
+</p>
+{% endblock %}

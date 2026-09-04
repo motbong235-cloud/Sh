@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>📥 ឯកសារត្រៀមរួចរាល់</h1>
+<p class="sub">ចុចលើឈ្មោះឯកសារនីមួយៗដើម្បី download ឬ download ទាំងអស់ជា ZIP</p>
+
+<ul class="files">
+  {% for f in files %}
+  <li>
+    <span>📄 {{ f }}</span>
+    <a href="{{ url_for('download_file', batch_id=batch_id, filename=f) }}">Download</a>
+  </li>
+  {% endfor %}
+</ul>
+
+<a class="btn" href="{{ url_for('download_all', batch_id=batch_id) }}">⬇️ Download ទាំងអស់ (ZIP)</a>
+{% endblock %}

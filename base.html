@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}ចែករំលែកឯកសារតាម QR{% endblock %}</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Khmer OS', 'Noto Sans Khmer', -apple-system, sans-serif;
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    color: #f1f5f9;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .card {
+    background: #1e293bcc;
+    border: 1px solid #334155;
+    border-radius: 16px;
+    padding: 32px;
+    max-width: 480px;
+    width: 100%;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+  }
+  h1 { font-size: 22px; margin: 0 0 8px; }
+  p.sub { color: #94a3b8; margin: 0 0 24px; font-size: 14px; }
+  input[type=file] {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px dashed #475569;
+    background: #0f172a;
+    color: #f1f5f9;
+    margin-bottom: 16px;
+  }
+  button, .btn {
+    display: inline-block;
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: #3b82f6;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+  }
+  button:hover, .btn:hover { background: #2563eb; }
+  .qr-box { text-align: center; margin: 20px 0; }
+  .qr-box img { border-radius: 12px; background: white; padding: 12px; }
+  ul.files { list-style: none; padding: 0; margin: 16px 0; }
+  ul.files li {
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+  }
+  ul.files li a { color: #60a5fa; text-decoration: none; font-weight: 600; }
+  .link-box {
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 13px;
+    word-break: break-all;
+    color: #94a3b8;
+    margin-bottom: 16px;
+  }
+  .error { color: #f87171; margin-bottom: 12px; font-size: 14px; }
+  .muted { color: #64748b; font-size: 12px; margin-top: 16px; text-align: center; }
+</style>
+</head>
+<body>
+<div class="card">
+{% block content %}{% endblock %}
+</div>
+</body>
+</html>

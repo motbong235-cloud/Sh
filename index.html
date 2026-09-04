@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>📤 ចែករំលែកឯកសារតាម QR</h1>
+<p class="sub">ជ្រើសរើសឯកសារ → បង្កើត QR → ភាគីម្ខាងទៀត scan ដើម្បី download</p>
+
+{% if error %}<div class="error">{{ error }}</div>{% endif %}
+
+<form action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data">
+  <input type="file" name="files" multiple required>
+  <button type="submit">បង្កើត QR Code</button>
+</form>
+<p class="muted">ឯកសារនឹងផុតកំណត់ដោយស្វ័យប្រវត្តិបន្ទាប់ពី {{ 72 }} ម៉ោង</p>
+{% endblock %}
